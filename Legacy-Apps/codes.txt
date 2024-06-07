@@ -1,0 +1,14 @@
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not IsPostBack Then
+         For Each item As ListItem In ctlist.Items
+
+         If item.Text.Contains("No") Then
+           item.Enabled = False
+          Next
+         End If
+     End Sub
+
+     <asp:RadioButtonList id=ctlist runat="server" Width="200px" RepeatDirection="Horizontal">
+       <asp:ListItem Value="Yes">Yes</asp:ListItem>
+       <asp:ListItem Value="No">No</asp:ListItem>
+     </asp:RadioButtonList>
